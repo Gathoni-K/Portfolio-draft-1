@@ -65,6 +65,7 @@ nav ul li a:focus {
 }
 
 nav ul li a::before {
+/*this block of code gives us the glowy box surrounding our links*/
     content: '';
     position: absolute;
     bottom: 0.5rem;
@@ -316,11 +317,15 @@ form input::placeholder{
 }
 form textarea{
     width: 50%;
+    border-radius: 1rem;
 }
 form button{
     padding: 10px;
     width: 100px;
     border-radius: 0.5rem;
     margin-top: 10px;
-    color:#FF00A0;
+    color: #fff9fd;
+    background: linear-gradient(135deg, #8A2BE2, #9932CC);
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
 }
