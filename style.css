@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Rajdhani";
+    background-color: #0A0A0A;
+    color: #F5F5F5;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+/* use rem instead of px for better responsiveness */
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+}
+
+nav ul li {
+    position: relative; 
+}
+nav ul li a {
+    text-decoration: none;
+    color: #00FFFF; 
+    font-weight: 500; 
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.25rem; 
+    padding: 0.75rem 1.25rem; 
+    /* padding for better click area */
+    border-radius: 0.5rem;
+     /* Adds subtle rounded corners */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    position: relative;
+ /* For pseudo-element positioning */
+    overflow: hidden; 
+    /* Hide overflow for effects */
+}
+
+nav ul li a:hover {
+    color: #FF00A0; 
+    background: rgba(255, 0, 160, 0.1);
+     /* Subtle background highlight with  color */
+    transform: translateY(-2px); 
+    /* Subtle lift effect */
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3); 
+    /* Cyan glow effect */
+}
+
+nav ul li a:active {
+    color: #8A2BE2; 
+    transform: translateY(0); 
+    /* Reset transform for press effect */
+    box-shadow: 0 2px 6px rgba(0, 255, 255, 0.2); 
+    /* Reduced cyan glow */
+}
+
+nav ul li a:focus {
+    outline: 2px solid #FF00A0; /* Using your magenta */
+    outline-offset: 2px;
+    color: #FF00A0;
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #FF00A0, #8A2BE2); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::before {
+    width: 80%; 
+    /* Animated underline on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem; /* Reduce gap on mobile */
+        justify-content: center; /* Center on mobile */
+    }
+    
+    nav ul li a {
+        font-size: 1rem; /* Smaller font on mobile */
+        padding: 0.5rem 1rem; /* Reduced padding */
+    }
+}
+.mainBody {
+  margin-top: 2rem;
+  padding: 0 1rem; /* Added horizontal padding for better spacing */
+}
+
+.section1 {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; 
+  /* Align items to top for better layout */
+  gap: 2rem; 
+  /* Better spacing between flex items */
+  flex-wrap: wrap; 
+  /* Allow wrapping on smaller screens */
+}
+
+.image {
+  flex: 1; 
+  /* Allow flexible sizing */
+  min-width: 300px; 
+  /* Minimum width for responsiveness */
+}
+
+.image img {
+  width: 250px; 
+  height: 200px;
+  object-fit: cover;
+  height: auto;
+  display: block;
+  border-radius: 8px; 
+  /* Added rounded corners for modern look */
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); 
+  /* Subtle cyberpunk glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  /* Smooth hover effects */
+}
+
+.image img:hover {
+  transform: translateY(-5px);
+   /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.5); 
+  /* Enhanced glow on hover */
+}
+
+.description {
+  font-family: "Roboto Mono", monospace;
+  flex: 1; 
+  /* Allow flexible sizing */
+  min-width: 300px; /* Minimum width for responsiveness */
+  line-height: 1.6; 
+  /* Better readability */
+  color: #e0e0e0;
+  font-size: 0.95rem; 
+  /* Slightly smaller for better hierarchy */
+}
+
+.image button {
+  padding: 15px 25px; 
+  /* Increased horizontal padding */
+  outline: none;
+  background: linear-gradient(135deg, #8A2BE2, #9932CC); 
+  /* Gradient for depth */
+  border: none; 
+  /* Removed default border */
+  border-radius: 1rem;
+  color: #fff9fd;
+  position: relative;
+  cursor: pointer;
+   /* Show it's clickable */
+  font-family: "Roboto Mono", monospace;
+   /* Match body font */
+  font-weight: 500; 
+  /* Slightly bolder */
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+  transition: all 0.3s ease; 
+  /* Smooth transitions */
+  margin-top: 1rem; /* Space from image */
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4); 
+  /* Consistent glow */
+}
+
+.image button:hover {
+  background: linear-gradient(135deg, #9932CC, #8A2BE2); 
+  /* Reverse gradient */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6); /* Enhanced glow */
+}
+
+.image button:active {
+  transform: translateY(0); /* Press effect */
+}
+
+.icons {
+  display: flex;
+  gap: 1rem; /* Space between icon buttons */
+  margin-top: 1rem; /* Space from other elements */
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+.icons button {
+  background: linear-gradient(135deg, #8A2BE2, #9932CC); /* Consistent gradient */
+  border: none;
+  border-radius: 50%; /* Make circular for icons */
+  padding: 12px; /* Equal padding for circular shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Fixed width for consistency */
+  height: 48px; /* Fixed height for consistency */
+}
+
+.icons button:hover {
+  background: linear-gradient(135deg, #9932CC, #8A2BE2);
+  transform: translateY(-2px) scale(1.05); 
+  /* Lift and scale */
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+.icons button img {
+  width: 24px; /* Fixed size instead of percentage */
+  height: 24px;
+  filter: brightness(0) invert(1);
+   /* Make icons white */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .section1 {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 1.5rem;
+  }
+  
+  .image, .description {
+    min-width: 100%; /* Full width on mobile */
+  }
+  
+  .image img {
+    max-width: 100%; /* Full width on mobile */
+  }
+}
+.about{
+    margin-top: 2rem;
+}
+h2{
+    font-family: "Roboto Mono",monospace;
+}
+.about p{
+  background: #0a0a0a;
+  border: 2px solid #8A2BE2;
+  border-radius: 10px;
+  padding: 2rem;
+  font-family: 'Source Code Pro', monospace;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); 
+}
+.portfolio{
+    font-family: "Source Code Pro", monospace;
+    margin-top: 2rem;
+    
+}
+.portfolio .myprojects{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    margin-top: 1rem;
+    
+}
+.portfolio .myprojects div{
+    border: 2px solid #8A2BE2;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); 
+    padding: 10px;
+}
+.techStack ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.techStack{
+    margin-top: 0.5rem;
+}
+.contactForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+}
+.contactForm h2{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 15px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #8A2BE2;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3); 
+    width: 50%;
+    padding: 15px;
+}
+form label{
+    font-family: "Source Code Pro", monospace;
+}
+form input{
+    width: 50%;
+    outline: none;
+    padding: 10px;
+    border-radius: 1.5rem;
+
+
+}
+form input::placeholder{
+    font-family: "Roboto MOno", monospace;
+}
+form textarea{
+    width: 50%;
+}
+form button{
+    padding: 10px;
+    width: 100px;
+    border-radius: 0.5rem;
+    margin-top: 10px;
+    color:#FF00A0;
+}
