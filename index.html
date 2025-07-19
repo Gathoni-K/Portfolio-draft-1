@@ -84,13 +84,22 @@
     <div class="contactForm">
       <form class="contact">
         <h2>Contact Me</h2>
+
+        <div class="successMessage" id="success"></div>
         <label for="name">Full Name: </label>
         <input type="name" placeholder="Enter Your Name" id="name" name="name">
+        <div class="errorMessage" id="name-error"></div>
+
         <label for="email">Your Email:</label>
         <input type="email" placeholder="abc@gmail.com" id="email" name="email">
+        <div class="errorMessage" id="email-error"></div>
+
         <label for="message">Enter Your Message:</label>
-        <textarea rows="10" cols=""></textarea>
-        <button type="submit">Submit</button>
+        <textarea rows="10" cols="" id="message"></textarea>
+        <div class="errorMessage" id="message-error"></div>
+
+        <button type="submit" id="submit-button">Submit</button>
+
       </form>
     </div>
    </div>

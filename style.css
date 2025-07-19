@@ -329,3 +329,6 @@ form button{
     cursor: pointer;
     box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
 }
+input.errorMessage{
+  border: 1px solid red;
+}
